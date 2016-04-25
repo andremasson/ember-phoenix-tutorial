@@ -1,22 +1,23 @@
----
 language: node_js
 node_js:
-  - "4"
-
+- '4'
 sudo: false
-
 cache:
   directories:
-    - node_modules
-
+  - node_modules
 before_install:
-  - npm config set spin false
-  - npm install -g bower
-  - npm install phantomjs-prebuilt
-
+- npm config set spin false
+- npm install -g bower
+- npm install phantomjs-prebuilt
 install:
-  - npm install
-  - bower install
-
+- npm install
+- bower install
 script:
-  - npm test
+- npm test
+deploy:
+  provider: heroku
+  api_key:
+    secure: anEqvo03ZP1TQcEs29QoGSYKAZSfa70El2jihdfQT1Qtccc+fIpzv0CpL7YU/VbLNzZtEO1VaLCxUvsj7BrugmD2N7LLPureLPA6Vc3FhbN9ly+8bz85VyO0nnt0vL7tzRyVOOZffX1X09CJUvlDDrp+PVXIQowIOfHFmGHKOJYv5G0rqVbro10QByDFAoQ03CqA70aNNzJMd9OQrOP9pyQzdxlcklphllXrum5WIA3mni2w72EnNxfLqFWFIGDdN8QU86qxnJoAWUsqmHG7Ibsr+KhVSoJwVj8d/JwY/JLngBlbLl9dvks1g4HtBX3w4D6yRbyunDLvk2nw7XYR31zDDzx1AuBlS20cWDqRhSMY5iRGecSNtOgK/CL5gj1HOqbp0yNWF2A+Nx0CMp9cYlJv6pe0eZjmUdb/hApEwk2SmDJRkI3rRutfpKWllDF668FcyjXE8oG9ISUjSqkTlNQpBQ5BkARudJwZ9CDH5coEyf6ooiB5WmtLFJFBehKKcjnUBc9tyl/i53AwRRlf1vqNbsvMIwB/Gs4WLmA4GKQiIEHQIgdZKjx+KEli42+bSXwS88V7KeUPV0UCfsMtldgRAAL5+fPKDMBJBrjpjTPJIy00awsudgSFeWCsEwmiu1L6K3URXkqyCj7XnrfH6msRvocYivKw9jp2GDC3jhM=
+  app: whispering-sands-14966
+  on:
+    repo: andremasson/ember-phoenix-tutorial
